@@ -4,10 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <title></title>
-    <!-- <link rel="stylesheet" type="text/css" href="reset.css"> -->
-    <!-- <link rel="stylesheet" type="text/css" href="style.css"> -->
+    <!-- Reset stylesheet -->
+    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+    <!-- Bootstrap Ref -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- jQuery ref -->
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <!-- Custom Styelsheet -->
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <!-- Firebase reference -->
     <script src="https://www.gstatic.com/firebasejs/4.0.0/firebase.js"></script>
@@ -19,8 +22,8 @@
         <p>
             <h3>A Comprehensive Directory of Employee Billable Hours.</h3></p>
     </div>
-    <div class="results">
-        <div class="panel panel-default">
+    <div class="employeeData">
+        <div class="panel panel-primary">
             <div class="panel-heading">
                 <div class="panel-title">Current Employees</div>
             </div>
@@ -35,21 +38,18 @@
                         </tr>
                     </thead>
                     <tbody>
-                        
-                            <td id="nameData"></td>
-                            <td id="roleData"></td>
-                            <td id="startData"></td>
-                            <td id="payData"></td>
-                        
+                        <td id="nameData"></td>
+                        <td id="roleData"></td>
+                        <td id="startData"></td>
+                        <td id="payData"></td>
                     </tbody>
-
                 </table>
             </div>
         </div>
     </div>
     </div>
-    <div class="search">
-        <div class="panel panel-default">
+    <div class="employeeInput">
+        <div class="panel panel-primary">
             <div class="panel-heading">
                 <div class="panel-title">Add Employee</div>
             </div>
@@ -72,7 +72,7 @@
                         <label for="searchTerm">Monthly Rate</label>
                         <input type="text" class="form-control" id="emPay" placeholder="$$">
                     </div>
-                    <button type="button" id="addEmployeeBtn" class="btn btn-info">Submit</button>
+                    <button type="button" id="addEmployeeBtn" class="btn btn-primary">Submit</button>
                 </form>
             </div>
         </div>
