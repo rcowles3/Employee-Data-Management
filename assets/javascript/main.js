@@ -32,8 +32,14 @@
      monthlyPay = $('#emPay').val().trim();
 
      // Input for moment.js library
+     var test = moment.unix(startDate).format("MM/DD/YYYY");
+     console.log(test);
+     console.log(startDate);
      monthsWorked = moment(startDate).diff(moment(), "months");
-     totalPay = moment();
+     totalPay = -monthsWorked * monthlyPay;
+
+     console.log(totalPay);
+
 
     console.log(monthsWorked);
 
@@ -41,10 +47,11 @@
      $('#nameData').append(employee + "<br>");
      $('#roleData').append(role + "<br>");
      $('#startData').append(startDate + "<br>");
-     $('#payData').append(monthlyPay + "<br>");
+     $('#payData').append("$ " + monthlyPay + "<br>");
 
      // Push calculated variables to html
-     $('#monthsWorked').append(monthsWorked + "<br>");
+     $('#monthsWorked').append(-monthsWorked + " months" + "<br>");
+     $('#totalBilled').append("$ " + totalPay + "<br>");
 
      // Pushing data to firebase database
      database.ref().push({
