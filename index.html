@@ -14,6 +14,8 @@
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <!-- Firebase reference -->
     <script src="https://www.gstatic.com/firebasejs/4.0.0/firebase.js"></script>
+    <!-- Link to Moment.js should go here -->
+  <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
 </head>
 
 <body>
@@ -34,14 +36,18 @@
                             <th>Employee Name</th>
                             <th>Role</th>
                             <th>Start Date</th>
+                            <th>Months Worked</th>
                             <th>Monthly Rate</th>
+                            <th>Total Billed</th>
                         </tr>
                     </thead>
                     <tbody>
                         <td id="nameData"></td>
                         <td id="roleData"></td>
                         <td id="startData"></td>
+                        <td id="monthsWorked"></td>
                         <td id="payData"></td>
+                        <td id="totalBilled"></td>
                     </tbody>
                 </table>
             </div>

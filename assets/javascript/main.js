@@ -11,8 +11,8 @@
  firebase.initializeApp(config);
 
  // Variables to set type
- var employee = "";
- var role = "";
+ var employee = " ";
+ var role = " ";
  var startDate = 0;
  var monthlyPay = 0;
 
@@ -31,11 +31,20 @@
      startDate = $('#emStart').val().trim();
      monthlyPay = $('#emPay').val().trim();
 
+     // Input for moment.js library
+     monthsWorked = moment(startDate).diff(moment(), "months");
+     totalPay = moment();
+
+    console.log(monthsWorked);
+
      // Push values to html      
      $('#nameData').append(employee + "<br>");
      $('#roleData').append(role + "<br>");
      $('#startData').append(startDate + "<br>");
      $('#payData').append(monthlyPay + "<br>");
+
+     // Push calculated variables to html
+     $('#monthsWorked').append(monthsWorked + "<br>");
 
      // Pushing data to firebase database
      database.ref().push({
@@ -43,15 +52,17 @@
          role: role,
          startDate: startDate,
          monthlyPay: monthlyPay,
-         // dateAdded: database.Servervalue.TIMESTAMP
-     });
-
-     // Firebase watcher, checking for added childs
-     database.ref().on("child-added", function(snapshot) {
-         // console.log(snapshot.val().employee);
+         // dateAdded: firebase.database.Servervalue.TIMESTAMP
      });
 
 
- }, function(errorObject) {
-     console.log("Errors handled: " + errorObject.code);
  });
+
+ // Firebase watcher, checking for added childs
+ // database.ref().on("child-added", function(snapshot) {
+ //             // console.log(snapshot.val().employee);
+
+ //         }), function(errorObject) {
+ //             console.log("Errors handled: " + errorObject.code);
+ //         };
+
