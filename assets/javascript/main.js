@@ -62,6 +62,9 @@
          // dateAdded: firebase.database.Servervalue.TIMESTAMP
      });
 
+     // Reset form on submiting employee data
+     $('form').get(0).reset();
+
 
  });
 
